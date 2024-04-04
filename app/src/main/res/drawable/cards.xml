@@ -1,0 +1,11 @@
+<!-- res/drawable/circle_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/columbiaBlue" />
+    <corners
+        android:topLeftRadius="0dp"
+        android:topRightRadius="25dp"
+        android:bottomLeftRadius="25dp"
+        android:bottomRightRadius="4dp" />
+</shape>
+

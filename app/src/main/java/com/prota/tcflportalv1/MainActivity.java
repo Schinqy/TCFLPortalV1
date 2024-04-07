@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                                 String program = userDetails.getString("program");
                                 String department = userDetails.getString("dpt");
 
-                                // Do something with the user details (e.g., pass to another activity)
+                                // Pass user details to another activity)
                                 Intent intent = new Intent(MainActivity.this, Dashv2.class);
                                 intent.putExtra("userId", userId);
                                 intent.putExtra("studentId", studentId);

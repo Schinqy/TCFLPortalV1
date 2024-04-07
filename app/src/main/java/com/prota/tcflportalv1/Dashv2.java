@@ -65,6 +65,11 @@ public class Dashv2 extends AppCompatActivity {
         Intent intent = new Intent(Dashv2.this, CalendarActivity.class);
         startActivity(intent);
     }
+
+    private void openResultsActivity() {
+        Intent intent = new Intent(Dashv2.this, ResultsActivity.class);
+        startActivity(intent);
+    }
     private void setButtonClickListener(LinearLayout button) {
         button.setOnClickListener(new View.OnClickListener() {
             @Override

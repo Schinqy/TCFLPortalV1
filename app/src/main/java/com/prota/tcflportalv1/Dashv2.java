@@ -3,11 +3,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Dashv2 extends AppCompatActivity {
+    String studentId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,7 @@ public class Dashv2 extends AppCompatActivity {
         LinearLayout  timetableButton = findViewById(R.id.timetableButton);
         LinearLayout financesButton = findViewById(R.id.financesButton);
         LinearLayout attendanceButton = findViewById(R.id.attendanceButton);
-        TextView  logoutButton = findViewById(R.id.textView); // Assuming this is your logout button
+        Button logoutButton = findViewById(R.id.logoutButton); // Assuming this is your logout button
 
         // Set onClickListeners for all buttons except announcementButton
         setButtonClickListener(resultsButton);
@@ -33,10 +35,22 @@ public class Dashv2 extends AppCompatActivity {
         setButtonClickListener(attendanceButton);
 
 
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Perform logout actions here
+                // 1. Clear any stored session data
+                clearSessionData();
+                // 2. Navigate back to the login screen
+                navigateToLoginScreen();
+            }
+        });
+
+
 
         // Retrieve data from the Intent
         Intent intent = getIntent();
-        String studentId = intent.getStringExtra("studentId");
+        studentId = intent.getStringExtra("studentId");
         String name = intent.getStringExtra("name");
         String surname = intent.getStringExtra("surname");
 
@@ -47,12 +61,16 @@ public class Dashv2 extends AppCompatActivity {
         regID.setText("Reg Number: " + studentId);
 
         announcementButton.setOnClickListener(v -> {
-            Toast.makeText(Dashv2.this, "Opening Announcements", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(Dashv2.this, "Opening Announcements", Toast.LENGTH_SHORT).show();
             openAnnouncementActivity();
         });
         calendarButton.setOnClickListener(v -> {
-            Toast.makeText(Dashv2.this, "Opening Calendar", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(Dashv2.this, "Opening Calendar", Toast.LENGTH_SHORT).show();
             openCalendarActivity();
+        });
+        resultsButton.setOnClickListener(v -> {
+           // Toast.makeText(Dashv2.this, "Opening Results", Toast.LENGTH_SHORT).show();
+            openResultsActivity();
         });
     }
 
@@ -68,6 +86,7 @@ public class Dashv2 extends AppCompatActivity {
 
     private void openResultsActivity() {
         Intent intent = new Intent(Dashv2.this, ResultsActivity.class);
+        intent.putExtra("studentId", studentId);
         startActivity(intent);
     }
     private void setButtonClickListener(LinearLayout button) {
@@ -82,4 +101,17 @@ public class Dashv2 extends AppCompatActivity {
     private void showComingSoonToast() {
         Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
     }
+
+    // Method to clear session data (you can replace this with your actual implementation)
+    private void clearSessionData() {
+        // Clear any stored session data here
+    }
+
+    // Method to navigate to the login screen (you can replace this with your actual implementation)
+    private void navigateToLoginScreen() {
+        Intent intent = new Intent(Dashv2.this, MainActivity.class);
+        startActivity(intent);
+        finish(); // Close the current activity to prevent user from navigating back
+    }
+
 }

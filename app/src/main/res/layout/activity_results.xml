@@ -58,30 +58,25 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <!-- Material Calendar View -->
-
-    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="381dp"
-        android:layout_below="@id/topBar"
-        android:layout_marginTop="27dp"
-        app:mcv_selectionColor="#00F"
-        app:mcv_showOtherDates="all"/>
 
     <!-- ScrollView -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/calendarView"
-        android:layout_marginTop="15dp"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="27dp"
+        android:fillViewport="true"
         android:background="@drawable/cards_all_rounded_corners">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/linearLayout"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tableLayoutResults">
+
+
+        </TableLayout>
     </ScrollView>
+
 
 </RelativeLayout>

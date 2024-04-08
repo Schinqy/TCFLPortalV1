@@ -25,4 +25,11 @@ public class ApiClient {
                 .build()
                 .create(CalendarInterface.class);
     }
+    public static ResultsInterface getResultsInterface() {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(ResultsInterface.class);
+    }
 }

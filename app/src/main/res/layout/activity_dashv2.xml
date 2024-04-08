@@ -244,16 +244,17 @@
 
     </GridLayout>
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/logoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttonGrid"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:text="Logout"
-        android:textColor="#FF0C0C"
+        android:textColor="@color/white"
         android:textSize="20sp" />
+
 
     <!-- Main Area -->
 </RelativeLayout>

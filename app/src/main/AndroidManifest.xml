@@ -24,6 +24,9 @@
             android:name=".Dashv2"
             android:exported="false" />
         <activity
+            android:name=".ResultsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Dash"
             android:exported="false" />
         <activity

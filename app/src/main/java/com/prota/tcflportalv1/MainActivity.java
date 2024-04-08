@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("program", program);
                                 intent.putExtra("department", department);
                                 startActivity(intent);
+
+
                             } else {
                                 // Handle unsuccessful login
                                 Toast.makeText(MainActivity.this, "Login Failed: " + jsonResponse.getString("message"), Toast.LENGTH_SHORT).show();

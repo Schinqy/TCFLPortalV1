@@ -1,0 +1,82 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/topbar">
+
+        <!-- Announcement Icon -->
+        <LinearLayout
+            android:id="@+id/backButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/bluePrimary"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:padding="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_announcement_no_color" />
+        </LinearLayout>
+
+        <!-- Title Bar -->
+        <RelativeLayout
+            android:id="@+id/studentInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/backButton"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp">
+
+            <TextView
+                android:id="@+id/titleBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Exams Timetable"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:textStyle="bold" /> <!-- Bold font style -->
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <!-- ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="27dp"
+        android:fillViewport="true"
+        android:background="@drawable/cards_all_rounded_corners">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tableLayoutTimetable">
+
+
+        </TableLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

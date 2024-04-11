@@ -27,6 +27,10 @@
             android:name=".ResultsActivity"
             android:exported="false" />
         <activity
+            android:name=".TimetableActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".Dash"
             android:exported="false" />
         <activity

@@ -32,4 +32,12 @@ public class ApiClient {
                 .build()
                 .create(ResultsInterface.class);
     }
+
+    public static TimetableInterface getTimetableInterface() {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(TimetableInterface.class);
+    }
 }

@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class Dashv2 extends AppCompatActivity {
     String studentId;
+    String department;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class Dashv2 extends AppCompatActivity {
         // Retrieve data from the Intent
         Intent intent = getIntent();
         studentId = intent.getStringExtra("studentId");
+        department = intent.getStringExtra("department");
         String name = intent.getStringExtra("name");
         String surname = intent.getStringExtra("surname");
 
@@ -72,6 +74,10 @@ public class Dashv2 extends AppCompatActivity {
            // Toast.makeText(Dashv2.this, "Opening Results", Toast.LENGTH_SHORT).show();
             openResultsActivity();
         });
+        timetableButton.setOnClickListener(v -> {
+            // Toast.makeText(Dashv2.this, "Opening Results", Toast.LENGTH_SHORT).show();
+            openTimetableActivity();
+        });
     }
 
     private void openAnnouncementActivity() {
@@ -87,6 +93,12 @@ public class Dashv2 extends AppCompatActivity {
     private void openResultsActivity() {
         Intent intent = new Intent(Dashv2.this, ResultsActivity.class);
         intent.putExtra("studentId", studentId);
+        startActivity(intent);
+    }
+
+    private void openTimetableActivity() {
+        Intent intent = new Intent(Dashv2.this, TimetableActivity.class);
+        intent.putExtra("department", department);
         startActivity(intent);
     }
     private void setButtonClickListener(LinearLayout button) {

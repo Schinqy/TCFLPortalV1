@@ -40,4 +40,13 @@ public class ApiClient {
                 .build()
                 .create(TimetableInterface.class);
     }
+
+
+    public static AnnouncementInterface getAnnouncementsInterface() {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(AnnouncementInterface.class);
+    }
 }

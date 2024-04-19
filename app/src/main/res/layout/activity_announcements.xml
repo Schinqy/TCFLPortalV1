@@ -62,176 +62,30 @@
 </RelativeLayout>
 
 
-    <!-- Highlighted Information -->
-    <LinearLayout
-        android:id="@+id/highlightInfo"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/topBar"
-        android:layout_marginTop="14dp"
-        android:orientation="horizontal"/>
 
-    <GridLayout
-        android:id="@+id/buttonGrid"
-        android:layout_width="wrap_content"
-        android:layout_height="587dp"
-        android:layout_below="@id/highlightInfo"
-        android:layout_marginTop="20dp"
-        android:columnCount="2"
-        android:rowCount="3">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:layout_below="@id/topBar">
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+     >
 
-        <!-- Dummy Announcement 1 -->
-        <LinearLayout
-            android:id="@+id/announcement1"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="181dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/cards"
+      <GridLayout
+          android:id="@+id/buttonGrid"
+          android:layout_width="wrap_content"
+          android:layout_height="587dp"
+          android:layout_marginTop="20dp"
+          android:columnCount="1"
+          >   </GridLayout>
 
-            android:elevation="2dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:orientation="vertical">
+  </ScrollView>
+</LinearLayout>
 
-            <!-- Content of the Card -->
-            <TextView
-                android:layout_width="181dp"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:text="4/3/24 9.00 AM: SRC Election to be held on 12/4/24"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
 
-        </LinearLayout>
 
-        <!-- Dummy Announcement 2 -->
-        <LinearLayout
-            android:id="@+id/announcement2"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="177dp"
-            android:layout_height="119dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/cards_right"
-            android:elevation="2dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:orientation="vertical">
-
-            <!-- Content of the Card -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:text="4/3/24 9.00 AM: ZUSA Games Cluster A startting next week"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-        <!-- Dummy Announcement 1 -->
-        <LinearLayout
-            android:id="@+id/announcement3"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="181dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/cards"
-            android:elevation="2dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:orientation="vertical">
-
-            <!-- Content of the Card -->
-            <TextView
-                android:layout_width="181dp"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:text="4/3/24 10:00 AM: Student Body Meeting on 15/4/24"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <!-- Dummy Announcement 2 -->
-        <LinearLayout
-            android:id="@+id/announcement4"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="177dp"
-            android:layout_height="119dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/cards_right"
-            android:elevation="2dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:orientation="vertical">
-
-            <!-- Content of the Card -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:text="2/3/24 9:40 AM: Career Fair Event next month"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <!-- Dummy Announcement 1 -->
-        <LinearLayout
-            android:id="@+id/announcement5"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="181dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/cards"
-            android:elevation="2dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:orientation="vertical">
-
-            <!-- Content of the Card -->
-            <TextView
-                android:layout_width="181dp"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:text="1/3/24 9.50 AM: SRC Election to be held on 12/4/24"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <!-- Dummy Announcement 2 -->
-        <LinearLayout
-            android:id="@+id/announcement6"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:layout_width="177dp"
-            android:layout_height="119dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/cards_right"
-            android:elevation="2dp"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:orientation="vertical">
-
-            <!-- Content of the Card -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp"
-                android:text="25/2/24 12.00 PM: Registration deadline extended by 3 weeks"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-        <!-- Add more dummy announcement cards as needed -->
-
-    </GridLayout>
 
 
     <!-- Main Area -->

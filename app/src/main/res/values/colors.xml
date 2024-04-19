@@ -7,6 +7,20 @@
     <color name="lightGray">#000000</color>
     <color name="columbiaBlue">#B9D6F2</color>
     <color name="dotColor">#1976D2</color>
-
+    <color name="coral">#FF5733</color> <!-- Coral -->
+    <color name="royalBlue">#66FF</color> <!-- Royal Blue -->
+    <color name="defaultColor">#CCCCCC</color> <!-- Light Gray -->
+    <color name="kindaRed">#CC1923</color> <!-- Light Gray -->
+    <color name="darkGray">#333333</color> <!-- Dark Gray -->
+    <color name="lightBlue">#ADD8E6</color>
+    <color name="skyBlue">#E0FFFF</color>
+    <color name="aliceBlue">#F0F8FF</color>
+    <color name="lightTurquoise">#D3F7B4</color>
+    <color name="cornflowerBlue">#C2DFFF</color>
+    <color name="lightSkyBlue">#A9D1E4</color>
+    <color name="powderBlue">#CFE2F3</color>
+    <color name="denimBlue">#D2E3F0</color>
+    <color name="robinEggBlue">#90E0EF</color>
+    <color name="lavenderBlue">#EBF5FB</color>
 
 </resources>

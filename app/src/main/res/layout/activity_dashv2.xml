@@ -43,7 +43,8 @@
                 android:fontFamily="@font/grand_hotel"
                 android:text="Hi, Nelson Mandela!"
                 android:textColor="@color/white"
-                android:textSize="34sp" />
+                android:textSize="34sp"
+                android:clickable="true"/>
 
             <TextView
                 android:id="@+id/studentId"

@@ -61,7 +61,7 @@ public class CalendarActivity extends AppCompatActivity {
             monthMaterialView = date.getMonth();
             yearMaterialView = date.getYear();
            updateUIBasedOnMonthViewChange(responseData, yearMaterialView, monthMaterialView);
-            Toast.makeText(CalendarActivity.this, "Month: " + monthMaterialView + ", Year: " + yearMaterialView, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(CalendarActivity.this, "Month: " + monthMaterialView + ", Year: " + yearMaterialView, Toast.LENGTH_SHORT).show();
 
         });
 
@@ -163,12 +163,12 @@ public class CalendarActivity extends AppCompatActivity {
                 // Create TextView to display calendar event details
                 TextView textView = new TextView(this);
                 if (year == currentYear && month == currentMonth + 1) {
-                    String formattedText = "<b>Activity:</b> " + activity + "<br>" +
-                            "<b>Start Time:</b> " + startTime + "<br>" +
-                            "<b>End Time:</b> " + endTime + "<br>" +
+                    String formattedText = "<b>" + activity + "</b> <br>" +
+                            "<b>From</b> <em>" + startTime + "</em> <br>" +
+                            "<b>To</b> " + endTime + "<br>" +
                             "<b>Location:</b> " + location + "<br>" +
                             "<b>Status:</b> " + status + "<br>" +
-                            "<b>Notes:</b> " + notes;
+                            "<b><strong><em>"+ notes + "</b></strong></em>";
 
                     // Use HtmlCompat to format the text
                     CharSequence styledText = HtmlCompat.fromHtml(formattedText, HtmlCompat.FROM_HTML_MODE_LEGACY);
@@ -233,12 +233,12 @@ public class CalendarActivity extends AppCompatActivity {
                         TextView textView = new TextView(this);
 
                         // Set text and format as needed
-                        String formattedText = "<b>Activity:</b> " + activity + "<br>" +
-                                "<b>Start Time:</b> " + startTime + "<br>" +
-                                "<b>End Time:</b> " + endTime + "<br>" +
+                        String formattedText = "<b>" + activity + "</b> <br>" +
+                                "<b>From</b> <em>" + startTime + "</em> <br>" +
+                                "<b>To</b> " + endTime + "<br>" +
                                 "<b>Location:</b> " + location + "<br>" +
                                 "<b>Status:</b> " + status + "<br>" +
-                                "<b>Notes:</b> " + notes;
+                                "<b><strong><em>"+ notes + "</b></strong></em>";
 
                         // Use HtmlCompat to format the text
                         CharSequence styledText = HtmlCompat.fromHtml(formattedText, HtmlCompat.FROM_HTML_MODE_LEGACY);

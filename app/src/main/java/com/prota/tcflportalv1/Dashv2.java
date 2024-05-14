@@ -11,6 +11,8 @@ import android.widget.Toast;
 public class Dashv2 extends AppCompatActivity {
     String studentId;
     String department;
+    String name ;
+    String surname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,10 @@ public class Dashv2 extends AppCompatActivity {
         LinearLayout announcementButton = findViewById(R.id.announcementButton);
         TextView salutation = findViewById(R.id.studentName);
         TextView regID = findViewById(R.id.studentId);
+
+        salutation.setOnClickListener(v -> {
+            openProfileActivity();
+        });
         // Find all buttons
         LinearLayout resultsButton = findViewById(R.id.resultsButton);
         LinearLayout  calendarButton = findViewById(R.id.calendarButton);
@@ -27,11 +33,9 @@ public class Dashv2 extends AppCompatActivity {
         LinearLayout  timetableButton = findViewById(R.id.timetableButton);
         LinearLayout financesButton = findViewById(R.id.financesButton);
         LinearLayout attendanceButton = findViewById(R.id.attendanceButton);
-        Button logoutButton = findViewById(R.id.logoutButton); // Assuming this is your logout button
+        Button logoutButton = findViewById(R.id.logoutButton);
 
         // Set onClickListeners for all buttons except announcementButton
-        setButtonClickListener(resultsButton);
-        setButtonClickListener(timetableButton);
         setButtonClickListener(financesButton);
         setButtonClickListener(attendanceButton);
 
@@ -53,8 +57,8 @@ public class Dashv2 extends AppCompatActivity {
         Intent intent = getIntent();
         studentId = intent.getStringExtra("studentId");
         department = intent.getStringExtra("department");
-        String name = intent.getStringExtra("name");
-        String surname = intent.getStringExtra("surname");
+        name = intent.getStringExtra("name");
+        surname = intent.getStringExtra("surname");
 
 
 
@@ -75,13 +79,17 @@ public class Dashv2 extends AppCompatActivity {
             openResultsActivity();
         });
         timetableButton.setOnClickListener(v -> {
-            // Toast.makeText(Dashv2.this, "Opening Results", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(Dashv2.this, "Opening Timetable", Toast.LENGTH_SHORT).show();
             openTimetableActivity();
+        });
+        attendanceButton.setOnClickListener(v -> {
+            // Toast.makeText(Dashv2.this, "Opening Attendance Sheet", Toast.LENGTH_SHORT).show();
+            openAttendanceActivity();
         });
     }
 
     private void openAnnouncementActivity() {
-        Intent intent = new Intent(Dashv2.this, Announcements.class);
+        Intent intent = new Intent(Dashv2.this, AnnouncementsActivity.class);
         startActivity(intent);
     }
 
@@ -93,6 +101,23 @@ public class Dashv2 extends AppCompatActivity {
     private void openResultsActivity() {
         Intent intent = new Intent(Dashv2.this, ResultsActivity.class);
         intent.putExtra("studentId", studentId);
+
+
+        startActivity(intent);
+    }
+
+    private void openAttendanceActivity() {
+        Intent intent = new Intent(Dashv2.this, AttendanceActivity.class);
+       intent.putExtra("studentId", studentId);
+        startActivity(intent);
+    }
+
+    private void openProfileActivity() {
+        Intent intent = new Intent(Dashv2.this, ProfileActivity.class);
+        intent.putExtra("studentId", studentId);
+        intent.putExtra("department", department);
+        intent.putExtra("name", name);
+        intent.putExtra("surname", surname);
         startActivity(intent);
     }
 
@@ -114,12 +139,12 @@ public class Dashv2 extends AppCompatActivity {
         Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
     }
 
-    // Method to clear session data (you can replace this with your actual implementation)
+    // Method to clear session data
     private void clearSessionData() {
         // Clear any stored session data here
     }
 
-    // Method to navigate to the login screen (you can replace this with your actual implementation)
+    // Method to navigate to the login screen
     private void navigateToLoginScreen() {
         Intent intent = new Intent(Dashv2.this, MainActivity.class);
         startActivity(intent);

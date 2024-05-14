@@ -4,21 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="Back Button"
+    android:background="@color/white"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:background="@color/white">
+    android:paddingBottom="16dp">
 
-    <!-- Top Bar -->
     <!-- Top Bar -->
     <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/topbar">
 
         <!-- Announcement Icon -->
@@ -46,47 +43,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/backButton"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="6dp">
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp">
 
             <TextView
                 android:id="@+id/titleBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Finances"
+                android:text="Attendance"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" /> <!-- Bold font style -->
+        </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
 
+    <!-- Material Calendar View -->
 
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarViewx"
+        android:layout_width="wrap_content"
+        android:layout_height="381dp"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="27dp"
+        app:mcv_selectionColor="#00F"
+        app:mcv_showOtherDates="all"/>
 
-<LinearLayout
+    <!-- ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="10dp"
-    android:layout_below="@id/topBar">
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-     >
+    android:layout_below="@id/calendarViewx"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/cards_all_rounded_corners">
 
-      <GridLayout
-          android:id="@+id/buttonGrid"
-          android:layout_width="wrap_content"
-          android:layout_height="587dp"
-          android:layout_marginTop="20dp"
-          android:columnCount="1"
-          >   </GridLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearLayoutx"/>
 
-  </ScrollView>
-</LinearLayout>
-
-
-
-
-
-    <!-- Main Area -->
+</ScrollView>
 </RelativeLayout>

@@ -114,7 +114,8 @@ public class ResultsActivity extends AppCompatActivity {
         TextView textView = new TextView(ResultsActivity.this);
         textView.setText(text);
         textView.setTextColor(Color.BLACK); // Set text color to black
-        textView.setPadding(20, 10, 20, 10); // Add padding to the TextView
+        textView.setPadding(20, 8, 20, 0); // Add padding to the TextView
+        //textView.setMargin(0, 10, 0, 10); // Add padding to the TextView
         textView.setGravity(Gravity.CENTER); // Set text alignment to center
         //textView.setBackgroundResource(R.drawable.cell_border); // Define a border drawable
         textView.setLayoutParams(new TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, weight)); // Set layout weight

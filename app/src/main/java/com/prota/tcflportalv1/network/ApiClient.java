@@ -2,8 +2,7 @@ package com.prota.tcflportalv1.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 public class ApiClient {
     private static final String BASE_URL = "https://lui.co.zw";
@@ -48,5 +47,13 @@ public class ApiClient {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(AnnouncementInterface.class);
+    }
+
+    public static AttendanceInterface getAttendanceInterface() {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(AttendanceInterface.class);
     }
 }

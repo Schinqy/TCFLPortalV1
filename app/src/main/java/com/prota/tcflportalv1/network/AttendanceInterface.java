@@ -7,5 +7,6 @@ import retrofit2.http.Query;
 
 public interface AttendanceInterface {
     @GET("portal/getAttendance.php")
+
     Call<ResponseBody> getAttendance(@Query("student_id") String studentId);
 }

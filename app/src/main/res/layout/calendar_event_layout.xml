@@ -1,0 +1,42 @@
+<!-- calendar_event_layout.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <!-- Color Box ImageView -->
+    <ImageView
+        android:id="@+id/colorBoxImageView"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_vertical"/>
+
+    <!-- Date TextView -->
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Time In TextView -->
+    <TextView
+        android:id="@+id/timeInTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"/>
+
+    <!-- Status TextView -->
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"/>
+</LinearLayout>

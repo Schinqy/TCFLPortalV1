@@ -22,5 +22,11 @@
     <color name="denimBlue">#D2E3F0</color>
     <color name="robinEggBlue">#90E0EF</color>
     <color name="lavenderBlue">#EBF5FB</color>
+    <color name="earlyColor">#00FF00</color>
+    <color name="absentColor">#FF0000</color>
+    <color name="lateColor">#FF00FF</color>
+    <color name="sickColor">#FFC5FF</color>
+    <color name="defaultColor2">#000000</color>
+
 
 </resources>

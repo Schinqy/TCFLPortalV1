@@ -18,7 +18,7 @@
             android:name=".CalendarActivity"
             android:exported="false" />
         <activity
-            android:name=".Announcements"
+            android:name=".AnnouncementsActivity"
             android:exported="false" />
         <activity
             android:name=".Dashv2"
@@ -28,6 +28,15 @@
             android:exported="false" />
         <activity
             android:name=".TimetableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FinancesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
             android:exported="false" />
 
         <activity

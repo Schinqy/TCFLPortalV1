@@ -2,6 +2,7 @@ package com.prota.tcflportalv1;
 
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.GridLayout;
@@ -29,16 +30,16 @@ import java.util.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
-import android.graphics.Typeface;
-import android.view.View;
-import android.widget.GridLayout;
+
+import android.text.SpannableStringBuilder;
+import android.text.style.StyleSpan;
 import android.widget.TextView;
-
-
-public class Announcements extends AppCompatActivity {
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
+public class AnnouncementsActivity extends AppCompatActivity {
     private String responseData;
 
     @Override
@@ -82,8 +83,13 @@ public class Announcements extends AppCompatActivity {
         });
     }
 
+
+
+
+
     private void populateAnnouncementCards(List<Announcement> announcementList) {
         GridLayout buttonGrid = findViewById(R.id.buttonGrid); // Reference to the GridLayout
+        int MAX_TEXT_LENGTH = 83;
 
         for (int i = 0; i < announcementList.size(); i++) {
             // Inflate the announcement card layout
@@ -93,7 +99,7 @@ public class Announcements extends AppCompatActivity {
             int leftMargin = 0;
             int topMargin = 0;
             int rightMargin = 0;
-            int bottomMargin = 16; // Adjust the bottom margin as needed
+            int bottomMargin = 16;
 
             GridLayout.LayoutParams layoutParams = new GridLayout.LayoutParams();
             layoutParams.setMargins(leftMargin, topMargin, rightMargin, bottomMargin);
@@ -112,7 +118,28 @@ public class Announcements extends AppCompatActivity {
             Announcement announcement = announcementList.get(i);
 
             // Populate text views with announcement data
-            announcementText.setText(announcement.getText());
+            String announcementContent = announcement.getText();
+            final String truncatedContent;
+            final String fullContent = announcementContent; // Store full content
+            if (announcementContent.length() > MAX_TEXT_LENGTH) {
+                String boldEllipsis = "<strong><b> ...</strong></b><u><em>Read more</em></u>"; // Make "..." bold using HTML formatting
+                truncatedContent = announcementContent.substring(0, MAX_TEXT_LENGTH) + boldEllipsis;
+                announcementText.setTag(true); // Tag to indicate whether text is truncated or not
+                announcementText.setOnClickListener(v -> {
+                    boolean isTruncated = (boolean) v.getTag();
+                    if (isTruncated) {
+                        announcementText.setText(fullContent);
+                        announcementText.setTag(false); // Update tag
+                    } else {
+                        announcementText.setText(Html.fromHtml(truncatedContent));
+                        announcementText.setTag(true); // Update tag
+                    }
+                });
+                announcementText.setText(Html.fromHtml(truncatedContent)); // Apply HTML formatting
+            } else {
+                truncatedContent = announcementContent;
+                announcementText.setText(truncatedContent);
+            }
 
             // Format and set announcement time
             String formattedTime = formatTimestamp(announcement.getTimestamp());
@@ -128,6 +155,8 @@ public class Announcements extends AppCompatActivity {
             buttonGrid.addView(announcementCard);
         }
     }
+
+
 
     // Method to format timestamp
     private String formatTimestamp(String timestamp) {

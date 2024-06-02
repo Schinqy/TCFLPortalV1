@@ -75,9 +75,9 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/ic_home"
+                android:src="@drawable/ic_profile"
                 android:scaleType="centerCrop"
-                android:background="@drawable/background_circular"/>
+                android:background="@color/robinEggBlue"/>
 
             <!-- Student Details -->
             <LinearLayout
@@ -85,15 +85,20 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="20dp"
-                android:gravity="center">
+                android:layout_marginLeft="20dp"
+                android:gravity="left">
 
                 <TextView
                     android:id="@+id/textViewName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Name: John Doe"
+                    android:text="John Doe"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:fontFamily="@font/grand_hotel"
+                  android:layout_gravity="center"
+                    android:textSize="38sp"
+
+                    android:layout_marginBottom="6dp"/>
 
                 <TextView
                     android:id="@+id/textViewRegId"
@@ -101,21 +106,23 @@
                     android:layout_height="wrap_content"
                     android:text="Registration ID: T123456"
                     android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_margin="3dp"/>
+
+                <TextView
+                    android:id="@+id/textViewProgram"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Program: Program Name"
+                    android:textColor="@color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/textViewCourse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:text="Course: Computer Science"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/textViewBatch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Batch: 2022"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -125,7 +132,38 @@
                     android:layout_height="wrap_content"
                     android:text="Email: john.doe@example.com"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:layout_margin="3dp"/>
+
+                <!-- New TextViews for additional details -->
+                <TextView
+                    android:id="@+id/textViewNationalID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="National ID: XXXXXXXXXXXXXXXX"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_margin="3dp"/>
+
+                <TextView
+                    android:id="@+id/textViewYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Year: X.X"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_margin="3dp"/>
+
+                <TextView
+                    android:id="@+id/textViewAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address: Street, City"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_margin="3dp"/>
+
+
 
             </LinearLayout>
         </LinearLayout>

@@ -64,4 +64,12 @@ public class ApiClient {
                 .build()
                 .create(FinancesInterface.class);
     }
+
+    public static BlobInterface getBlobInterface() {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(BlobInterface.class);
+    }
 }

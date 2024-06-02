@@ -13,6 +13,10 @@ public class Dashv2 extends AppCompatActivity {
     String department;
     String name ;
     String surname;
+    String national_id;
+    String year;
+    String program;
+    String address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,12 @@ public class Dashv2 extends AppCompatActivity {
         department = intent.getStringExtra("department");
         name = intent.getStringExtra("name");
         surname = intent.getStringExtra("surname");
+        national_id = intent.getStringExtra("national_id");
+        year = intent.getStringExtra("year");
+        program = intent.getStringExtra("program");
+        address = intent.getStringExtra("address");
+
+
 
 
 
@@ -127,6 +137,11 @@ public class Dashv2 extends AppCompatActivity {
         intent.putExtra("department", department);
         intent.putExtra("name", name);
         intent.putExtra("surname", surname);
+        intent.putExtra("national_id", national_id);
+        intent.putExtra("year", year);
+        intent.putExtra("program", program);
+        intent.putExtra("address", address);
+
         startActivity(intent);
     }
 

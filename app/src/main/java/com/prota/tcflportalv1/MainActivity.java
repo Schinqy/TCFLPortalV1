@@ -1,5 +1,6 @@
 package com.prota.tcflportalv1;
 
+import android.util.Base64;
 import android.util.Log;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.prota.tcflportalv1.network.ApiClient;
 import com.prota.tcflportalv1.network.ApiInterface;
 import okhttp3.ResponseBody;
+
+import org.json.JSONException;
 import org.json.JSONObject; // Import this line for JSONObject
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -79,6 +82,10 @@ public class MainActivity extends AppCompatActivity {
                                 String year = userDetails.getString("year");
                                 String program = userDetails.getString("program");
                                 String department = userDetails.getString("dpt");
+                                String national_id = userDetails.getString("national_id");
+                                String address = userDetails.getString("address");
+
+
 
                                 // Pass user details to another activity)
                                 Intent intent = new Intent(MainActivity.this, Dashv2.class);
@@ -90,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("year", year);
                                 intent.putExtra("program", program);
                                 intent.putExtra("department", department);
+                                intent.putExtra("national_id", national_id);
+                                intent.putExtra("address", address);
+                               // intent.putExtra("profile_pic", profilePicBlob);
                                 startActivity(intent);
 
 

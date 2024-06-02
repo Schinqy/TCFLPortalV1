@@ -56,4 +56,12 @@ public class ApiClient {
                 .build()
                 .create(AttendanceInterface.class);
     }
+
+    public static FinancesInterface getFinancesInterface() {
+        return new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(FinancesInterface.class);
+    }
 }

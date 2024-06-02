@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="Back Button"
+    android:background="@color/white"
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:paddingTop="16dp"
-    android:paddingBottom="16dp"
-    android:background="@color/white">
+    android:paddingBottom="16dp">
 
-    <!-- Top Bar -->
     <!-- Top Bar -->
     <RelativeLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/topbar">
 
         <!-- Announcement Icon -->
+
+        <!-- Title Bar -->
+
         <LinearLayout
             android:id="@+id/backButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="67dp"
-            android:layout_height="match_parent"
+            android:layout_width="65dp"
+            android:layout_height="47dp"
             android:layout_marginTop="8dp"
             android:backgroundTint="@color/bluePrimary"
             android:gravity="center"
@@ -37,17 +37,16 @@
                 android:layout_height="40dp"
                 android:padding="8dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_announcement_no_color" />
+                android:src="@drawable/ic_finance_no_color" />
         </LinearLayout>
 
-        <!-- Title Bar -->
         <RelativeLayout
             android:id="@+id/studentInfoLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/backButton"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="6dp">
+            android:layout_centerVertical="true"
+            android:layout_marginStart="6dp">
 
             <TextView
                 android:id="@+id/titleBar"
@@ -58,35 +57,42 @@
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold" /> <!-- Bold font style -->
+        </RelativeLayout>
     </RelativeLayout>
-</RelativeLayout>
+
+    <TextView
+        android:id="@+id/financeBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed"
+
+        android:text="loading..."
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" /> <!-- Bold font style -->
+    <!-- ScrollView -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/financeBalance"
+        android:layout_marginTop="15dp"
+
+        android:fillViewport="true"
+        android:background="@drawable/cards_all_rounded_corners">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:id="@+id/tableLayoutFinances">
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginBottom="10dp"
-    android:layout_below="@id/topBar">
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-     >
-
-      <GridLayout
-          android:id="@+id/buttonGrid"
-          android:layout_width="wrap_content"
-          android:layout_height="587dp"
-          android:layout_marginTop="20dp"
-          android:columnCount="1"
-          >   </GridLayout>
-
-  </ScrollView>
-</LinearLayout>
-
-
-
-
-
-    <!-- Main Area -->
 </RelativeLayout>

@@ -86,6 +86,10 @@ public class Dashv2 extends AppCompatActivity {
             // Toast.makeText(Dashv2.this, "Opening Attendance Sheet", Toast.LENGTH_SHORT).show();
             openAttendanceActivity();
         });
+        financesButton.setOnClickListener(v -> {
+
+            openFinancesActivity();
+        });
     }
 
     private void openAnnouncementActivity() {
@@ -103,6 +107,11 @@ public class Dashv2 extends AppCompatActivity {
         intent.putExtra("studentId", studentId);
 
 
+        startActivity(intent);
+    }
+    private void openFinancesActivity() {
+        Intent intent = new Intent(Dashv2.this, FinancesActivity.class);
+        intent.putExtra("studentId", studentId);
         startActivity(intent);
     }
 
